@@ -1,29 +1,15 @@
-import { useEffect, useState } from 'react';
-import { Moon, Sun } from 'lucide-react';
+// src/Components/DarkModeToggle.jsx
+import React from 'react';
+import { IconButton, Tooltip } from '@mui/material';
+import { Brightness4, Brightness7 } from '@mui/icons-material';
 
-const DarkModeToggle = () => {
-  const [darkMode, setDarkMode] = useState(() =>
-    localStorage.getItem("theme") === "dark"
-  );
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
-
+const DarkModeToggle = ({ mode, toggleMode }) => {
   return (
-    <button
-      onClick={() => setDarkMode(!darkMode)}
-      className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-      aria-label="Toggle Theme"
-    >
-      {darkMode ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} className="text-gray-800" />}
-    </button>
+    <Tooltip title="Toggle theme">
+      <IconButton onClick={toggleMode} color="inherit">
+        {mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
+      </IconButton>
+    </Tooltip>
   );
 };
 

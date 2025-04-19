@@ -1,26 +1,31 @@
+// src/App.jsx
+import React, { useMemo, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Sidebar from './Components/Sidebar';
-import Navbar from './Components/Navbar';
+import { ThemeProvider } from '@mui/material/styles';
+import Layout from './Layout';
 import Dashboard from './Pages/Dashboard';
 import Profile from './Pages/Profile';
 import Settings from './Pages/Settings';
- 
-<Routes>
-  <Route path="/" element={<Dashboard />} />
-  <Route path="/profile" element={<Profile />} />
-  <Route path="/settings" element={<Settings />} />
-</Routes>
+import { getTheme } from './theme';
+
 const App = () => {
+  const [mode, setMode] = useState('light');
+  const theme = useMemo(() => getTheme(mode), [mode]);
+
+  const toggleMode = () => {
+    setMode((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
+
   return (
-    <div className="flex">
-      <Sidebar />
-      <div className="flex-1">
-        <Navbar />
+    <ThemeProvider theme={theme}>
+      <Layout mode={mode} toggleMode={toggleMode}>
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
-      </div>
-    </div>
+      </Layout>
+    </ThemeProvider>
   );
 };
 
