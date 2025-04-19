@@ -1,12 +1,41 @@
-# React + Vite
+# 🧩 React Material UI Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive admin dashboard built with **React**, **Material UI**, and **Recharts**, featuring:
+- 📊 Dynamic stat cards and charts
+- 🌙 Light & Dark Mode toggle
+- 🧭 Collapsible sidebar with icons + tooltips
+- 🔔 Notifications & Profile dropdowns
+- 👤 User management with modal form
+- 🔄 Real-time updates (simulated)
+- 📱 Fully responsive layout
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Demo
 
-## Expanding the ESLint configuration
+> Coming soon — you can deploy this to **Vercel**, **Netlify**, or **GitHub Pages**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Tech Stack
+
+- **React** – Frontend library
+- **Material UI (MUI)** – UI components and theming
+- **Recharts** – Charts and visualizations
+- **React Router DOM** – Routing
+- **Vite** – Build tool and dev server
+
+---
+
+## 📸 Screenshots
+
+| Dashboard Overview | Charts | Dark Mode |
+|--------------------|--------|-----------|
+| ![screenshot](./public/screenshot-dashboard.png) | ![chart](./public/screenshot-charts.png) | ![darkmode](./public/screenshot-darkmode.png) |
+
+> Tip: Add real screenshots in your `public/` folder and update the paths above.
+
+---
+
+## 📁 Project Structure
+
